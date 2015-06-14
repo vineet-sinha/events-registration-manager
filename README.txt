@@ -1,4 +1,4 @@
-=== The Events Calendar Extension: Registration ===
+=== The Events Calendar Extension: Registration Manager ===
 
 Contributors: e-colori, nicogee
 Donate link: http://e-colori.com/

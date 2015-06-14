@@ -1,13 +1,13 @@
 <?php
 /**
- * @package   The Events Calendar Extension: Registration
+ * @package   The Events Calendar Extension: Registration Manager
  * @author    Tobias Fritz - www.e-colori.com
  * @license   GPL-2.0+
  * @link      http://www.e-colori.com
  * @copyright 2015 e-colori.com
  *
  * @wordpress-plugin
- * Plugin Name: The Events Calendar Extension: Registration
+ * Plugin Name: The Events Calendar Extension: Registration Manager
  * Plugin URI:  http://www.e-colori.com
  * Description: Easy and simple extension for 'The Events Calendar' to get registrations via email using shortcodes [wpecr_registration_button] and [wpecr_registration] for the form page witht the slug '/registration'
  * Version:     1.1
