@@ -92,7 +92,7 @@ $input_checked = ( ( $options['showbank'] ) ? 'checked="checked"' : '' );
 			</tr>
 			<tr>
 				<th scope="row">
-					<?php _e( 'Paymet Text', 'wpecr' ) ?>
+					<?php _e( 'Payment Text', 'wpecr' ) ?>
 				</th>
 				<td>
 					<label for="bank_txt"><?php _e( 'Enter here the text to explain how to pay before showing the bank details', 'wpecr' ) ?></label>

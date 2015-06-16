@@ -87,7 +87,7 @@ msgstr "Zeige die Bank Details in der Email"
 
 #: admin/OLD_admin.php:91
 #: admin/partials/event-registration-admin-display.php:95
-msgid "Paymet Text"
+msgid "Payment Text"
 msgstr "Zahlungs Betreff"
 
 #: admin/OLD_admin.php:94

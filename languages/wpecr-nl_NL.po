@@ -86,7 +86,7 @@ msgstr "Toon bankgegevens in e-mail"
 
 #: admin/OLD_admin.php:91
 #: admin/partials/event-registration-admin-display.php:95
-msgid "Paymet Text"
+msgid "Payment Text"
 msgstr "Paymet tekst"
 
 #: admin/OLD_admin.php:94
