@@ -14,7 +14,12 @@
 
 //set checkbox status
 //var_dump($options);
-$input_checked = ( ( $options['showbank'] ) ? 'checked="checked"' : '' );
+$showbank_checked =    ( ( $options['showbank'] ) ? 'checked="checked"' : '' );
+$askAddress_checked =  ( ( $options['askAddress'] ) ? 'checked="checked"' : '' );
+$askPostcode_checked = ( ( $options['askPostcode'] ) ? 'checked="checked"' : '' );
+$askCity_checked =     ( ( $options['askCity'] ) ? 'checked="checked"' : '' );
+$askCountry_checked =  ( ( $options['askCountry'] ) ? 'checked="checked"' : '' );
+$askPhone_checked =    ( ( $options['askPhone'] ) ? 'checked="checked"' : '' );
 
 ?>
 <div class="wrap metabox-holder">
@@ -76,27 +81,27 @@ $input_checked = ( ( $options['showbank'] ) ? 'checked="checked"' : '' );
 				<td>
 				<fieldset>
 					<label for="askAddress">
-						<input type="checkbox" name="options[askAddress]" id="askAddress" value="1" <?php echo $input_checked ?> >
-						<?php _e( 'Ask for address', 'wpecr' ) ?>
+						<input type="checkbox" name="options[askAddress]" id="askAddress" value="1" <?php echo $askAddress_checked ?> >
+						<?php _e( 'Ask for Address', 'wpecr' ) ?>
 					</label>
 					<br>
 					<label for="askPostcode">
-						<input type="checkbox" name="options[askPostcode]" id="askPostcode" value="1" <?php echo $input_checked ?> >
+						<input type="checkbox" name="options[askPostcode]" id="askPostcode" value="1" <?php echo $askPostcode_checked ?> >
 						<?php _e( 'Ask for Postcode', 'wpecr' ) ?>
 					</label>
 					<br>
 					<label for="askCity">
-						<input type="checkbox" name="options[askCity]" id="askCity" value="1" <?php echo $input_checked ?> >
+						<input type="checkbox" name="options[askCity]" id="askCity" value="1" <?php echo $askCity_checked ?> >
 						<?php _e( 'Ask for City', 'wpecr' ) ?>
 					</label>
 					<br>
 					<label for="askCountry">
-						<input type="checkbox" name="options[askCountry]" id="askCountry" value="1" <?php echo $input_checked ?> >
+						<input type="checkbox" name="options[askCountry]" id="askCountry" value="1" <?php echo $askCountry_checked ?> >
 						<?php _e( 'Ask for Country', 'wpecr' ) ?>
 					</label>
 					<br>
 					<label for="askPhone">
-						<input type="checkbox" name="options[askPhone]" id="askPhone" value="1" <?php echo $input_checked ?> >
+						<input type="checkbox" name="options[askPhone]" id="askPhone" value="1" <?php echo $askPhone_checked ?> >
 						<?php _e( 'Ask for Phone', 'wpecr' ) ?>
 					</label>
 				</fieldset>
@@ -123,7 +128,7 @@ $input_checked = ( ( $options['showbank'] ) ? 'checked="checked"' : '' );
 				<td>
 				<fieldset>
 					<label for="showbank">
-					<input type="checkbox" name="options[showbank]" id="showbank" value="1" <?php echo $input_checked ?> >
+					<input type="checkbox" name="options[showbank]" id="showbank" value="1" <?php echo $showbank_checked ?> >
 					<?php _e( 'Show bank details in email', 'wpecr' ) ?>
 					</label>
 				</fieldset>

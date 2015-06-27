@@ -37,42 +37,64 @@ $data .= '
 			<label for="email">'.__( 'Email', 'wpecr' ).'*</label>
 			<input type="email" name="wpecr[email]" id="email" value="'.$this->post_empty('email').'" required>
 		</p>
-		<p>
-			<label for="address">'.__( 'Address', 'wpecr' ).'</label>
-			<input type="text" name="wpecr[address]" id="address" value="'.$this->post_empty('address').'" >
-		</p>
-		<p>
-			<label for="postcode">'.__( 'Postcode', 'wpecr' ).'</label>
-			<input type="text" name="wpecr[postcode]" id="postcode" value="'.$this->post_empty('postcode').'" >
-		</p>
-		<p>
-			<label for="city">'.__( 'City', 'wpecr' ).'</label>
-			<input type="text" name="wpecr[city]" id="city" value="'.$this->post_empty('city').'" >
-		</p>
-		<p>
-			<label for="country">'.__( 'Country', 'wpecr' ).'</label>
+		';
+		if ($options['askAddress']) {
+			$data .= '
+			<p>
+				<label for="address">'.__( 'Address', 'wpecr' ).'</label>
+				<input type="text" name="wpecr[address]" id="address" value="'.$this->post_empty('address').'" >
+			</p>
+			';
+		}
+		if ($options['askPostcode']) {
+			$data .= '
+			<p>
+				<label for="postcode">'.__( 'Postcode', 'wpecr' ).'</label>
+				<input type="text" name="wpecr[postcode]" id="postcode" value="'.$this->post_empty('postcode').'" >
+			</p>
+			';
+		}
+		if ($options['askCity']) {
+			$data .= '
+			<p>
+				<label for="city">'.__( 'City', 'wpecr' ).'</label>
+				<input type="text" name="wpecr[city]" id="city" value="'.$this->post_empty('city').'" >
+			</p>
+			';
+		}
+		if ($options['askCountry']) {
+			$data .= '
+			<p>
+				<label for="country">'.__( 'Country', 'wpecr' ).'</label>
 
-			<select id="country" name="wpecr[country]" >';
-				//get the choosen language country code
-				$locale_lang = substr( get_locale(), 3, 2 );
+				<select id="country" name="wpecr[country]" >';
+					//get the choosen language country code
+					$locale_lang = substr( get_locale(), 3, 2 );
 
-				//get the countries by choosen language
-				foreach( $this->all_countries( true, true ) as $country ):
+					//get the countries by choosen language
+					foreach( $this->all_countries( true, true ) as $country ):
 
-				if($country['value']==$locale_lang && !isset($_POST['wpecr']['country'])) {
-					$data .= '<option value="'.$country['value'].'" selected="selected">'.$country['name'].'</option>';
-				}else if(isset($_POST['wpecr']['country']) && $country['value']==$_POST['wpecr']['country']) {
-					$data .= '<option value="'.$country['value'].'" selected="selected">'.$country['name'].'</option>';
-				}else{
-					$data .= '<option value="'.$country['value'].'">'.$country['name'].'</option>';
-				}
-				endforeach;
-				$data .= '	</select>
-		</p>
-		<p>
-			<label for="phone">'.__( 'Phone', 'wpecr' ).'</label>
-			<input type="tel" name="wpecr[phone]" id="phone" value="'.$this->post_empty('phone').'" > <span class="smaller">'.__( 'e.g. +49221998877', 'wpecr' ).'</span>
-		</p>
+					if($country['value']==$locale_lang && !isset($_POST['wpecr']['country'])) {
+						$data .= '<option value="'.$country['value'].'" selected="selected">'.$country['name'].'</option>';
+					}else if(isset($_POST['wpecr']['country']) && $country['value']==$_POST['wpecr']['country']) {
+						$data .= '<option value="'.$country['value'].'" selected="selected">'.$country['name'].'</option>';
+					}else{
+						$data .= '<option value="'.$country['value'].'">'.$country['name'].'</option>';
+					}
+					endforeach;
+					$data .= '	</select>
+			</p>
+			';
+		}
+		if ($options['askPhone']) {
+			$data .= '
+			<p>
+				<label for="phone">'.__( 'Phone', 'wpecr' ).'</label>
+				<input type="tel" name="wpecr[phone]" id="phone" value="'.$this->post_empty('phone').'" > <span class="smaller">'.__( 'e.g. +49221998877', 'wpecr' ).'</span>
+			</p>
+			';
+		}
+		$data .= '
 		<br/>
 		<p>
 			'.__( 'Seminar', 'wpecr' ).': <strong>'. $this->post_empty('event') .'</strong> | '. $this->post_empty('date') .' | '. $this->currency_format( $this->post_empty('price') ) .'
