@@ -66,6 +66,45 @@ $input_checked = ( ( $options['showbank'] ) ? 'checked="checked"' : '' );
 			</tbody>
 		</table>
 
+		<h3 class="title"><?php _e( 'Registration fields', 'wpecr' ) ?></h3>
+		<table class="form-table">
+			<tbody>
+			<tr>
+				<th scope="row">
+					<?php _e( 'Ask fields to users', 'wpecr' ) ?>
+				</th>
+				<td>
+				<fieldset>
+					<label for="askAddress">
+						<input type="checkbox" name="options[askAddress]" id="askAddress" value="1" <?php echo $input_checked ?> >
+						<?php _e( 'Ask for address', 'wpecr' ) ?>
+					</label>
+					<br>
+					<label for="askPostcode">
+						<input type="checkbox" name="options[askPostcode]" id="askPostcode" value="1" <?php echo $input_checked ?> >
+						<?php _e( 'Ask for Postcode', 'wpecr' ) ?>
+					</label>
+					<br>
+					<label for="askCity">
+						<input type="checkbox" name="options[askCity]" id="askCity" value="1" <?php echo $input_checked ?> >
+						<?php _e( 'Ask for City', 'wpecr' ) ?>
+					</label>
+					<br>
+					<label for="askCountry">
+						<input type="checkbox" name="options[askCountry]" id="askCountry" value="1" <?php echo $input_checked ?> >
+						<?php _e( 'Ask for Country', 'wpecr' ) ?>
+					</label>
+					<br>
+					<label for="askPhone">
+						<input type="checkbox" name="options[askPhone]" id="askPhone" value="1" <?php echo $input_checked ?> >
+						<?php _e( 'Ask for Phone', 'wpecr' ) ?>
+					</label>
+				</fieldset>
+				</td>				
+			</tr>
+			</tbody>
+		</table>
+
 		<h3 class="title"><?php _e( 'Bank account details', 'wpecr' ) ?></h3>
 		<table class="form-table">
 			<tbody>
