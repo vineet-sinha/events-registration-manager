@@ -99,20 +99,30 @@ $data .= '
 			</p>
 			';
 		}
-		$data .= '
-		<br/>
-		<p>
-			'.__( 'Cost', 'wpecr' ). ': '. $this->currency_format( $this->post_empty('price') ) .'
-		</p>		
-		<p>
-			<p>'.__( 'Your message', 'wpecr' ).'<p>
-			<textarea name="wpecr[message]" id="message" rows="10" cols="40">'.$this->post_empty('message').'</textarea>
-		</p>		
-		<p>
-			<input type="checkbox" name="wpecr[conditions]" id="conditions" value="'.$this->post_empty('conditions').'" required>
-			<label for="conditions" class="label_checkbox">'.__( 'I accept the', 'wpecr' ).' <a href="'.$terms_url.'" target="_blank"> '.__( 'terms and conditions', 'wpecr' ).'</a>*</label>	
-		</p>
-		';
+		$data .= '<br/>';
+		if ($options['showCost']) {
+			$data .= '
+			<p>
+				'.__( 'Cost', 'wpecr' ). ': '. $this->currency_format( $this->post_empty('price') ) .'
+			</p>		
+			';
+		}
+		if ($options['askMessage']) {
+			$data .= '
+			<p>
+				<p>'.__( 'Your message', 'wpecr' ).'<p>
+				<textarea name="wpecr[message]" id="message" rows="10" cols="40">'.$this->post_empty('message').'</textarea>
+			</p>		
+			';
+		}
+		if ($options['checkTerms']) {
+			$data .= '
+			<p>
+				<input type="checkbox" name="wpecr[conditions]" id="conditions" value="'.$this->post_empty('conditions').'" required>
+				<label for="conditions" class="label_checkbox">'.__( 'I accept the', 'wpecr' ).' <a href="'.$terms_url.'" target="_blank"> '.__( 'terms and conditions', 'wpecr' ).'</a>*</label>	
+			</p>
+			';
+		}
 		
 		//get the choosen language
 		$language = substr( get_locale(), 0, 2 );

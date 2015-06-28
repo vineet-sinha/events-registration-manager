@@ -20,6 +20,9 @@ $askPostcode_checked = ( ( $options['askPostcode'] ) ? 'checked="checked"' : '' 
 $askCity_checked =     ( ( $options['askCity'] ) ? 'checked="checked"' : '' );
 $askCountry_checked =  ( ( $options['askCountry'] ) ? 'checked="checked"' : '' );
 $askPhone_checked =    ( ( $options['askPhone'] ) ? 'checked="checked"' : '' );
+$askMessage_checked =  ( ( $options['askMessage'] ) ? 'checked="checked"' : '' );
+$showCost_checked =    ( ( $options['showCost'] ) ? 'checked="checked"' : '' );
+$checkTerms_checked =  ( ( $options['checkTerms'] ) ? 'checked="checked"' : '' );
 
 ?>
 <div class="wrap metabox-holder">
@@ -103,6 +106,21 @@ $askPhone_checked =    ( ( $options['askPhone'] ) ? 'checked="checked"' : '' );
 					<label for="askPhone">
 						<input type="checkbox" name="options[askPhone]" id="askPhone" value="1" <?php echo $askPhone_checked ?> >
 						<?php _e( 'Ask for Phone', 'wpecr' ) ?>
+					</label>
+					<br>
+					<label for="askMessage">
+						<input type="checkbox" name="options[askMessage]" id="askMessage" value="1" <?php echo $askMessage_checked ?> >
+						<?php _e( 'Ask for Message', 'wpecr' ) ?>
+					</label>
+					<br>
+					<label for="showCost">
+						<input type="checkbox" name="options[showCost]" id="showCost" value="1" <?php echo $showCost_checked ?> >
+						<?php _e( 'Show Cost', 'wpecr' ) ?>
+					</label>
+					<br>
+					<label for="checkTerms">
+						<input type="checkbox" name="options[checkTerms]" id="checkTerms" value="1" <?php echo $checkTerms_checked ?> >
+						<?php _e( 'Check Terms and Conditions', 'wpecr' ) ?>
 					</label>
 				</fieldset>
 				</td>				
