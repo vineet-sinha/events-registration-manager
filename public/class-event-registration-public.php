@@ -226,10 +226,10 @@ class Event_Registration_Public {
 	 *
 	 * @since     1.0.0
 	 */
-    public function post_empty( $data, $id='' ) {
+    public function post_empty( $data, $id='', $prefix='' ) {
 
-    	if( isset( $_POST['wpecr'][$data] ) && !empty( $data ) ) {
-    		return $_POST['wpecr'][$data];
+    	if( isset($_POST['wpecr'][$data]) && !empty($_POST['wpecr'][$data]) && !empty( $data ) ) {
+    		return $prefix . $_POST['wpecr'][$data];
     	} else {
     		return false;
     	}

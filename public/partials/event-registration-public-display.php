@@ -17,6 +17,11 @@ if( !isset( $_POST['wpecr']['message'] ) ) {
 }
 //print_r($_POST);
 
+// Title
+// TODO: put title in a better way
+$data .= 'Event: <strong>'.$this->post_empty('event') . $this->post_empty('date','',': ');
+$data .= '<br><br>';
+
 $data .= '
 <div class="wpecr_registration_form">
 	<form action="'.$posturl.'" method="post">
@@ -97,7 +102,7 @@ $data .= '
 		$data .= '
 		<br/>
 		<p>
-			'.__( 'Seminar', 'wpecr' ).': <strong>'. $this->post_empty('event') .'</strong> | '. $this->post_empty('date') .' | '. $this->currency_format( $this->post_empty('price') ) .'
+			'.__( 'Cost', 'wpecr' ). ': '. $this->currency_format( $this->post_empty('price') ) .'
 		</p>		
 		<p>
 			<p>'.__( 'Your message', 'wpecr' ).'<p>
